@@ -49,8 +49,8 @@ router.get("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-router.get("/", verifyTokenAndAdmin, async (req, res) => {
-  const result = await User.find().lean()
+router.get("/s", verifyTokenAndAdmin, async (req, res) => {
+  const result = await User.find()
   if (result) {
     let newArray = [];
     //the password should not be sent or displayed
@@ -65,22 +65,28 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-router.get("/stats", async (req, res) => {
+
+//hello guys this is where the problem is, i cant access the router with this endpoint except i use "/" endpoint
+router.get("/", async (req, res) => {
   const date = new Date();
   const lastYear = new Date(date.setFullYear() - 1);
 
   try {
     const data = await User.aggregate([
-      { $match: { createdAt: { $gte: lastYear } } },
+     { $match: { createdAt: { $gte: lastYear } } }, //only documents that pass this test can go to the next stage i.e only documents with year greater than last year (literally all documents for now)
+
       {
         $project: {
           month: { $month: "$createdAt" },
+          year: {$year: "$createdAt"},
         },
       },
       {
         $group: {
           _id: "$month",
-          total: { $sum: 1 },
+          
+          total: { $sum: 1},
+//sum of all the documents that match this query once       
         },
       },
     ]);
