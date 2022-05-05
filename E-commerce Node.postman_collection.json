@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "a435f044-89ed-44b3-a958-b3188f83875e",
+		"name": "E-commerce Node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\",\r\n    \"email\": \"admin@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Dami\",\r\n    \"password\": \"aaaaa\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzFlODQwYjk1YzQ4NmMyNmJhMDE0ZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE2Mzc1MDcsImV4cCI6MTY1MTg5NjcwN30.hu4FJBGCfWGvIFHvBAq-gprsAEkj0307YiYIemIN-Fk",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"damilolo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/6271e840b95c486c26ba014d",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"6271e840b95c486c26ba014d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzFlODQwYjk1YzQ4NmMyNmJhMDE0ZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE2Mzc1MDcsImV4cCI6MTY1MTg5NjcwN30.hu4FJBGCfWGvIFHvBAq-gprsAEkj0307YiYIemIN-Fk",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"damilolo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/6271e840b95c486c26ba014d",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"6271e840b95c486c26ba014d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a user(Admin property)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzFlODQwYjk1YzQ4NmMyNmJhMDE0ZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE2Mzc1MDcsImV4cCI6MTY1MTg5NjcwN30.hu4FJBGCfWGvIFHvBAq-gprsAEkj0307YiYIemIN-Fk",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/6271e840b95c486c26ba014d",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"6271e840b95c486c26ba014d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users(Admin property)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzIwNGM0OTYzZDk0OGRhNzg3YzA3NiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1MTY2MzA2MywiZXhwIjoxNjUxOTIyMjYzfQ.NXciKvGcIq7mM_Et9pofVUhLLZh2j7XKBBSZlRTRrwM",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users stat",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzIwNGM0OTYzZDk0OGRhNzg3YzA3NiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1MTY2MzA2MywiZXhwIjoxNjUxOTIyMjYzfQ.NXciKvGcIq7mM_Et9pofVUhLLZh2j7XKBBSZlRTRrwM",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": []
+		},
+		{
+			"name": "Orders",
+			"item": []
+		},
+		{
+			"name": "Cart",
+			"item": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
